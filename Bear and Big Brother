@@ -1,0 +1,10 @@
+def years(a,b):
+    count=0
+    while a<=b:
+        count+=1
+        a=3*a
+        b=2*b
+    return count
+a,b=map(int,input().split())
+print(years(a,b))
+    
