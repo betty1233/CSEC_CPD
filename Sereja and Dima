@@ -1,0 +1,20 @@
+n = int(input())  
+cards = list(map(int, input().split()))  
+sereja_score = 0
+dima_score = 0
+turn = 0  
+
+while len(cards) > 0:
+    if cards[0] > cards[-1]:
+        card = cards.pop(0)  
+    else:
+        card = cards.pop(-1) 
+    if turn == 0:
+        sereja_score += card  
+    else:
+        dima_score += card  
+    if turn == 0:
+        turn = 1  
+    else:
+        turn = 0            
+print(sereja_score, dima_score)
