@@ -1,0 +1,16 @@
+n = int(input())  
+birds = list(map(int, input().split()))  
+m = int(input())  
+for _ in range(m):
+    xi, yi = map(int, input().split())  
+    xi -= 1
+    yi -= 1
+    birds_to_left = yi
+    birds_to_right = birds[xi] - (yi + 1)
+    birds[xi] = 0
+    if xi > 0:
+        birds[xi - 1] += birds_to_left
+    if xi < n - 1:
+        birds[xi + 1] += birds_to_right
+for b in birds:
+    print(b)
