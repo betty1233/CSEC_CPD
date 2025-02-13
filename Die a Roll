@@ -1,0 +1,12 @@
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+Y, W = map(int, input().split())
+M = max(Y, W)
+numerator = 7 - M
+denominator = 6
+gcd_value = gcd(numerator, denominator)
+numerator //= gcd_value
+denominator //= gcd_value
+print(f"{numerator}/{denominator}")
